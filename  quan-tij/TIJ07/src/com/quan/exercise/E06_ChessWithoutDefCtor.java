@@ -17,10 +17,16 @@ class BoardGame extends Game {
 
 }
 
-class ChessWithoutDefCtor extends BoardGame{
-	
+class ChessWithoutDefCtor extends BoardGame {
+	// public ChessWithoutDefCtor() {
+	// // TODO Auto-generated constructor stub
+	// System.out.println("ChessWithoutDefCtor constructor");
+	// super(11);
+	// }
 }
 
 public class E06_ChessWithoutDefCtor {
-
+	public static void main(String[] args) {
+		new ChessWithoutDefCtor();
+	}
 }
