@@ -1,4 +1,4 @@
-package com.quan.example.music3;
+package com.quan.exercise;
 
 import com.quan.example.Note;
 
@@ -7,7 +7,8 @@ class Instrument {
 		System.out.println("Instrument.play()" + n);
 	}
 
-	String what() {
+	@Override
+	public String toString() {
 		return "Instrument";
 	}
 
@@ -21,7 +22,7 @@ class Wind extends Instrument {
 		System.out.println("Wind.play() " + n);
 	}
 
-	String what() {
+	public String toString() {
 		return "Wind";
 	}
 
@@ -37,7 +38,7 @@ class Percussion extends Instrument {
 	}
 
 	@Override
-	String what() {
+	public String toString() {
 		return "Percussion";
 	}
 
@@ -54,7 +55,7 @@ class Stringed extends Instrument {
 	}
 
 	@Override
-	String what() {
+	public String toString() {
 		return "Stringed";
 	}
 
@@ -83,25 +84,22 @@ class Woodwind extends Wind {
 	}
 
 	@Override
-	String what() {
+	public String toString() {
 		return "Woodwind";
 	}
 }
 
-public class music3 {
-	public static void tune(Instrument i) {
-		i.play(Note.MIDDLE_C);
-	}
+public class E06_MusicToString {
+	static Instrument[] orchestra = { new Wind(), new Percussion(),
+			new Stringed(), new Brass(), new Woodwind() };
 
-	public static void tuneAll(Instrument[] e) {
-		for (Instrument instrument : e) {
-			tune(instrument);
+	public static void printAll(Instrument[] orch) {
+		for (Instrument instrument : orch) {
+			System.out.println(instrument);
 		}
 	}
 
 	public static void main(String[] args) {
-		Instrument[] orchestra = { new Wind(), new Percussion(),
-				new Stringed(), new Brass(), new Woodwind() };
-		tuneAll(orchestra);
+		printAll(orchestra);
 	}
 }
