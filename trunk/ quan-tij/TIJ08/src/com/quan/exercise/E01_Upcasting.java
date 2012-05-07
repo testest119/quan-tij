@@ -11,12 +11,20 @@ class Unicycle extends Cycle {
 	public int wheels() {
 		return 1;
 	}
+
+	public void balance() {
+
+	}
 }
 
 class Bicycle extends Cycle {
 	@Override
 	public int wheels() {
 		return 2;
+	}
+
+	public void balance() {
+
 	}
 }
 
